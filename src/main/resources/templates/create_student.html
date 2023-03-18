@@ -7,6 +7,24 @@
 
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Student Management System</a>
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" th:href="@{/students}">Student Management</a>
+              </li>
+
+            </ul>
+
+          </div>
+        </nav>
+        
+        <br />
+        <br />
+    
+    
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
@@ -18,7 +36,7 @@
                             <input 
                                 type="text" 
                                 name="firstName" 
-                                th:field="firstName" 
+                                th:field="*{firstName}" 
                                 class="form-control" 
                                 placeholder="Enter Student First Name"/>
                         </div>
@@ -28,7 +46,7 @@
                             <input 
                                 type="text" 
                                 name="lastName" 
-                                th:field="lastName" 
+                                th:field="*{lastName}" 
                                 class="form-control" 
                                 placeholder="Enter Student Last Name"/>
                         </div>
@@ -38,7 +56,7 @@
                             <input 
                                 type="text" 
                                 name="email" 
-                                th:field="email" 
+                                th:field="*{email}" 
                                 class="form-control" 
                                 placeholder="Enter Student Email"/>
                         </div>

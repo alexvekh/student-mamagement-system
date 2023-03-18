@@ -3,6 +3,8 @@ package com.boocrun.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.boocrun.entity.Student;
 import com.boocrun.service.StudentService;
@@ -31,6 +33,14 @@ public class StudentController {
 	Student student = new Student();
 	model.addAttribute("student", student);
 	return "create_student";
+    }
+    
+    @PostMapping("/students")
+    public String seveStudent(@ModelAttribute("student") Student student) {
+	
+	studentService.saveStudent(student);
+	return "redirect:/students";
+	
     }
 
 }
