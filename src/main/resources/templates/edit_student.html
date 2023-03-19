@@ -13,9 +13,11 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
-                <a class="nav-link" th:href="@{/students}">Student Management</a>
+                <a class="nav-link" th:href="@{/students}">Student List</a>
               </li>
-
+              <li class="nav-item active">
+                <a class="nav-link" th:href="@{/students/new}">Add Student</a>
+              </li>
             </ul>
 
           </div>
@@ -28,6 +30,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                    <br />
                     <h1 class="text-center">Update Student</h1>
                     <div class="card-body">
                         <form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
